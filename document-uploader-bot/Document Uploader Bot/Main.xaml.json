@@ -1,0 +1,81 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_CustomerSFDCAccountIdLong",
+      "DisplayName": "in_CustomerSFDCAccountIdLong",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_FileContentDescription",
+      "DisplayName": "in_FileContentDescription",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "out_FileUploadIdentity",
+      "DisplayName": "out_FileUploadIdentity",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "out_FileUploadMessage",
+      "DisplayName": "out_FileUploadMessage",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "out_FileUploadSuccessful",
+      "DisplayName": "out_FileUploadSuccessful",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_UploadableFileName",
+      "DisplayName": "in_UploadableFileName",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "C:\\Users\\kristofer.hoch\\OneDrive - UiPath\\Desktop\\HammerCallMasterScenarioRunner.xlsx",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

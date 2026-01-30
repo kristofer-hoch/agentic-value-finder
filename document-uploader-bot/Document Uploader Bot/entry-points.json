@@ -1,0 +1,42 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "9c9f4b2e-677b-405c-9abe-2ff0b2116888",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_CustomerSFDCAccountIdLong": {
+            "type": "string"
+          },
+          "in_FileContentDescription": {
+            "type": "string"
+          },
+          "in_UploadableFileName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "in_CustomerSFDCAccountIdLong",
+          "in_UploadableFileName"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "out_FileUploadIdentity": {
+            "type": "string"
+          },
+          "out_FileUploadMessage": {
+            "type": "string"
+          },
+          "out_FileUploadSuccessful": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  ]
+}

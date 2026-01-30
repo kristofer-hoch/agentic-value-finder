@@ -1,0 +1,6 @@
+{
+  "Name": "Document Uploader Bot",
+  "ProjectType": "Process",
+  "Description": "This bot is a tool used by the Agentic Value Finder Agent Suite.",
+  "MainFile": "Main.xaml"
+}

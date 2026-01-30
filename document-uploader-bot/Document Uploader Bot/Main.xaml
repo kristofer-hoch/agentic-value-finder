@@ -1,0 +1,702 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_FileContentDescription="Unknown File Type" this:Main.in_CustomerSFDCAccountIdLong="00136000012kx3fAAA" this:Main.in_UploadableFileName="C:\Users\kristofer.hoch\OneDrive - UiPath\Desktop\HammerCallMasterScenarioRunner.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:d="clr-namespace:DocumentUploaderBot;assembly=DataService.DocumentUploaderBot" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_FileUploadIdentity" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FileUploadMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FileUploadSuccessful" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_FileContentDescription" Type="InArgument(x:String)" />
+    <x:Property Name="in_CustomerSFDCAccountIdLong" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="in_UploadableFileName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>DocumentUploaderBot</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>DataService.DocumentUploaderBot</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1189,718.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int64" Default="50" Name="maximumFileSizeInMb" />
+      <Variable x:TypeArguments="x:Int64" Default="1048576" Name="bytesInOneMegabyte" />
+      <Variable x:TypeArguments="d:CSHCustomer" Name="customerRecord" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="uploadableFile" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message: Starting Document Upload" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">"Starting file upload"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Sequence DisplayName="Sequence: Initialize and Validate Argument Data" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="scg:IList(d:CSHCustomer)" Name="customerRecords" />
+        <Variable x:TypeArguments="x:Int64" Name="customerRecordsCount" />
+        <Variable x:TypeArguments="x:Boolean" Name="uploadableFileExists" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Assign: Initialize out_FileUploadSuccessful" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">
+            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">out_FileUploadSuccessful</CSharpReference>
+          </OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">false</CSharpValue>
+          </InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:PathExists DisplayName="Get Local File or Folder" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="PathExists_1" PathType="File">
+        <ui:PathExists.Exists>
+          <OutArgument x:TypeArguments="x:Boolean">
+            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">uploadableFileExists</CSharpReference>
+          </OutArgument>
+        </ui:PathExists.Exists>
+        <ui:PathExists.Path>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">in_UploadableFileName</CSharpValue>
+          </InArgument>
+        </ui:PathExists.Path>
+        <ui:PathExists.Resource>
+          <OutArgument x:TypeArguments="upr:ILocalResource">
+            <CSharpReference x:TypeArguments="upr:ILocalResource" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">uploadableFile</CSharpReference>
+          </OutArgument>
+        </ui:PathExists.Resource>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:PathExists>
+      <If DisplayName="Ensure the file exists" sap:VirtualizedContainerService.HintSize="480,240" sap2010:WorkflowViewState.IdRef="If_3">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">!uploadableFileExists</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign: File doesn't exist message" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">out_FileUploadMessage</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">string.Format("The selected file doesn't exist: {0}", in_UploadableFileName)</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <TerminateWorkflow DisplayName="Terminate Workflow because file doesn't exist" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3">
+              <TerminateWorkflow.Reason>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">out_FileUploadIdentity</CSharpValue>
+                </InArgument>
+              </TerminateWorkflow.Reason>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </TerminateWorkflow>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,24" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <If DisplayName="If: Check Filesize" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">uploadableFile.GetSizeInBytes() &gt; (maximumFileSizeInMb * bytesInOneMegabyte)</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,144" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign: out_FileUploadMessage" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">out_FileUploadMessage</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">string.Format("{0} file size is too large. Maximum accepted file size is {0} Mb.", in_UploadableFileName, maximumFileSizeInMb)</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <TerminateWorkflow DisplayName="Terminate Workflow because of file size limitation" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1">
+              <TerminateWorkflow.Reason>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">out_FileUploadMessage</CSharpValue>
+                </InArgument>
+              </TerminateWorkflow.Reason>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </TerminateWorkflow>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </If.Else>
+      </If>
+      <uda:QueryEntityRecords x:TypeArguments="d:CSHCustomer" ContinueOnError="False" DisplayName="Query Entity Records: Get the Customer Record" EntityId="24959161-0fd5-f011-8195-6045bdda2ab2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" QueriedEntityId="24959161-0fd5-f011-8195-6045bdda2ab2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+        <uda:QueryEntityRecords.FilterArguments>
+          <uda:FilterArgument FilterActivityType="{x:Null}">
+            <uda:FilterArgument.Filter>
+              <uda:GroupFilter Index="0" Operator="AND">
+                <uda:GroupFilter.Filters>
+                  <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                    <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="SFDCAccountNumber" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                  </scg:List>
+                </uda:GroupFilter.Filters>
+                <uda:GroupFilter.Groups>
+                  <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                </uda:GroupFilter.Groups>
+              </uda:GroupFilter>
+            </uda:FilterArgument.Filter>
+          </uda:FilterArgument>
+        </uda:QueryEntityRecords.FilterArguments>
+        <uda:QueryEntityRecords.FilterValues>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">in_CustomerSFDCAccountIdLong</CSharpValue>
+            </InArgument>
+          </scg:List>
+        </uda:QueryEntityRecords.FilterValues>
+        <uda:QueryEntityRecords.OutputRecords>
+          <OutArgument x:TypeArguments="scg:IList(d:CSHCustomer)">
+            <CSharpReference x:TypeArguments="scg:IList(d:CSHCustomer)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">customerRecords</CSharpReference>
+          </OutArgument>
+        </uda:QueryEntityRecords.OutputRecords>
+        <uda:QueryEntityRecords.TotalRecords>
+          <OutArgument x:TypeArguments="x:Int64">
+            <CSharpReference x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">customerRecordsCount</CSharpReference>
+          </OutArgument>
+        </uda:QueryEntityRecords.TotalRecords>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uda:QueryEntityRecords>
+      <If DisplayName="If: Ensure we got a record" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">0 == customerRecordsCount</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uda:CreateEntityRecord x:TypeArguments="d:CSHCustomer" InputEntity="{x:Null}" IsInRecordView="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="24959161-0fd5-f011-8195-6045bdda2ab2" ExpansionDepth="1" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" TimeoutInMs="30000">
+              <uda:CreateEntityRecord.InputEntityInFieldView>
+                <InArgument x:TypeArguments="d:CSHCustomer">
+                  <CSharpValue x:TypeArguments="d:CSHCustomer" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8" xml:space="preserve">new DocumentUploaderBot.CSHCustomer() {  CustomerName = string.Empty,  SFDCAccountNumber = in_CustomerSFDCAccountIdLong }</CSharpValue>
+                </InArgument>
+              </uda:CreateEntityRecord.InputEntityInFieldView>
+              <uda:CreateEntityRecord.OutputEntity>
+                <OutArgument x:TypeArguments="d:CSHCustomer">
+                  <CSharpReference x:TypeArguments="d:CSHCustomer" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">customerRecord</CSharpReference>
+                </OutArgument>
+              </uda:CreateEntityRecord.OutputEntity>
+              <uda:CreateEntityRecord.State>
+                <udam:RecordState RequiredFieldCount="2">
+                  <udam:RecordState.SelectedFields>
+                    <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="2">
+                      <udam:DynamicEntityField Id="2e959161-0fd5-f011-8195-6045bdda2ab2" IsRequired="True" Name="CustomerName">
+                        <udam:DynamicEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">string.Empty</CSharpValue>
+                          </InArgument>
+                        </udam:DynamicEntityField.ArgumentValue>
+                      </udam:DynamicEntityField>
+                      <udam:DynamicEntityField Id="2f959161-0fd5-f011-8195-6045bdda2ab2" IsRequired="True" Name="SFDCAccountNumber">
+                        <udam:DynamicEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_CustomerSFDCAccountIdLong</CSharpValue>
+                          </InArgument>
+                        </udam:DynamicEntityField.ArgumentValue>
+                      </udam:DynamicEntityField>
+                    </scg:List>
+                  </udam:RecordState.SelectedFields>
+                </udam:RecordState>
+              </uda:CreateEntityRecord.State>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:CreateEntityRecord>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign: Get the First Customer Record" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="d:CSHCustomer">
+                  <CSharpReference x:TypeArguments="d:CSHCustomer" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">customerRecord</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="d:CSHCustomer">
+                  <CSharpValue x:TypeArguments="d:CSHCustomer" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">customerRecords.FirstOrDefault()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="Sequence: Upload the file" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="d:CSHCustomerFiles" Name="customerFileRecord" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch DisplayName="Try Catch: Create the File Record" sap:VirtualizedContainerService.HintSize="480,710" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch.Try>
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="480,288" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uda:CreateEntityRecord x:TypeArguments="d:CSHCustomerFiles" InputEntity="{x:Null}" IsInRecordView="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record: Customer File" EntityId="3f959161-0fd5-f011-8195-6045bdda2ab2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_3" TimeoutInMs="30000">
+              <uda:CreateEntityRecord.InputEntityInFieldView>
+                <InArgument x:TypeArguments="d:CSHCustomerFiles">
+                  <CSharpValue x:TypeArguments="d:CSHCustomerFiles" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35" xml:space="preserve">new DocumentUploaderBot.CSHCustomerFiles() {  Customer = new CSHCustomer() { Id = customerRecord.Id },  FileClassification = in_FileContentDescription,  FileName = Path.GetFileName(in_UploadableFileName) }</CSharpValue>
+                </InArgument>
+              </uda:CreateEntityRecord.InputEntityInFieldView>
+              <uda:CreateEntityRecord.OutputEntity>
+                <OutArgument x:TypeArguments="d:CSHCustomerFiles">
+                  <CSharpReference x:TypeArguments="d:CSHCustomerFiles" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">customerFileRecord</CSharpReference>
+                </OutArgument>
+              </uda:CreateEntityRecord.OutputEntity>
+              <uda:CreateEntityRecord.State>
+                <udam:RecordState RequiredFieldCount="3">
+                  <udam:RecordState.SelectedFields>
+                    <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
+                      <udam:DynamicEntityField Id="ba959161-0fd5-f011-8195-6045bdda2ab2" IsRequired="True" Name="Customer">
+                        <udam:DynamicEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="s:Guid">
+                            <CSharpValue x:TypeArguments="s:Guid" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">customerRecord.Id</CSharpValue>
+                          </InArgument>
+                        </udam:DynamicEntityField.ArgumentValue>
+                      </udam:DynamicEntityField>
+                      <udam:DynamicEntityField Id="59959161-0fd5-f011-8195-6045bdda2ab2" IsRequired="True" Name="FileClassification">
+                        <udam:DynamicEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_FileContentDescription</CSharpValue>
+                          </InArgument>
+                        </udam:DynamicEntityField.ArgumentValue>
+                      </udam:DynamicEntityField>
+                      <udam:DynamicEntityField Id="58959161-0fd5-f011-8195-6045bdda2ab2" IsRequired="True" Name="FileName">
+                        <udam:DynamicEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Path.GetFileName(in_UploadableFileName)</CSharpValue>
+                          </InArgument>
+                        </udam:DynamicEntityField.ArgumentValue>
+                      </udam:DynamicEntityField>
+                    </scg:List>
+                  </udam:RecordState.SelectedFields>
+                </udam:RecordState>
+              </uda:CreateEntityRecord.State>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:CreateEntityRecord>
+            <uda:UploadFileToRecordField x:TypeArguments="d:CSHCustomerFiles" FilePath="{x:Null}" InputEntity="{x:Null}" ContinueOnError="False" DisplayName="Upload File to Record Field: Customer File" EntityId="3f959161-0fd5-f011-8195-6045bdda2ab2" ExpansionDepth="2" Field="UploadedFile" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="UploadFileToRecordField`1_1" TimeoutInMs="30000">
+              <uda:UploadFileToRecordField.FileResource>
+                <InArgument x:TypeArguments="upr:IResource">
+                  <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">uploadableFile</CSharpValue>
+                </InArgument>
+              </uda:UploadFileToRecordField.FileResource>
+              <uda:UploadFileToRecordField.OutputEntity>
+                <OutArgument x:TypeArguments="d:CSHCustomerFiles">
+                  <CSharpReference x:TypeArguments="d:CSHCustomerFiles" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">customerFileRecord</CSharpReference>
+                </OutArgument>
+              </uda:UploadFileToRecordField.OutputEntity>
+              <uda:UploadFileToRecordField.RecordId>
+                <InArgument x:TypeArguments="s:Guid">
+                  <CSharpValue x:TypeArguments="s:Guid" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">customerFileRecord.Id</CSharpValue>
+                </InArgument>
+              </uda:UploadFileToRecordField.RecordId>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:UploadFileToRecordField>
+            <Assign DisplayName="Assign: Set file uploaded to True" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">out_FileUploadSuccessful</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">true</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">out_FileUploadIdentity</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">customerFileRecord.Id.ToString()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign DisplayName="Assign: Set file uploaded message to success" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">out_FileUploadMessage</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">"Successfully uploaded the file"</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+          </Sequence>
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,192" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign: CustomerFile Creation Error Message" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">out_FileUploadMessage</CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">string.Format("Failed to create a record to store the customer file: {0}", exception.Message)</CSharpValue>
+                    </InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message: CustomerFile Creation Exception" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+                  <ui:LogMessage.Message>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">string.Format("{0}\nStacktrace:\n{1}", out_FileUploadMessage, exception.StackTrace)</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Message>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+                <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2">
+                  <TerminateWorkflow.Exception>
+                    <InArgument x:TypeArguments="s:Exception">
+                      <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">exception</CSharpValue>
+                    </InArgument>
+                  </TerminateWorkflow.Exception>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </TerminateWorkflow>
+              </Sequence>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+        <TryCatch.Finally>
+          <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="480,96" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </TryCatch.Finally>
+      </TryCatch>
+    </Sequence>
+    <Sequence DisplayName="Sequence: Process Complete" sap:VirtualizedContainerService.HintSize="480,168" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:AddLogFields DisplayName="Add Log Fields" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+        <ui:AddLogFields.Fields>
+          <InArgument x:TypeArguments="x:String" x:Key="Report_FileName">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">in_UploadableFileName</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Report_FileSize">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">uploadableFile.GetSizeInBytes().ToString()</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Report_UploadStatus">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">out_FileUploadSuccessful.ToString()</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Report_UploadMessage ">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">out_FileUploadMessage</CSharpValue>
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Report_UploadedFileIdentity">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">out_FileUploadIdentity</CSharpValue>
+          </InArgument>
+        </ui:AddLogFields.Fields>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:AddLogFields>
+      <ui:LogMessage DisplayName="Log Message: Upload Complete" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">"Completed file upload"</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+    </Sequence>
+  </Sequence>
+</Activity>
